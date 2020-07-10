@@ -28,6 +28,21 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 
 // CREA TU FUNCION challenge1 aqui:
 
+function challenge1() {
+    let botones = prompt("Cuantos botones necesitas?");
+    for (let i = 0; i < botones; i++) {
+        let dummy = document.getElementById("dummy");
+
+        // In this example, we instead create a new div called "newDiv".
+        var newDiv = document.createElement("button");
+
+        // We then give this newDiv the text "A pleasure to meet you!".
+        newDiv.textContent = nombres[i];
+
+        // Now we use the ".appendChild" method to combine the two divs together on the page.
+        dummy.appendChild(newDiv);
+    }
+}
 
 
 /*
@@ -36,6 +51,36 @@ Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los n
 
 // CREA TU FUNCION challenge2 2 aquí.
 
+function challenge2() {
+    nombres.forEach(nombre => {
+        console.log(nombre.toUpperCase())
+    })
+}
+
+
+function challenge3() {
+
+    function Dog(nombre, color, raza) {
+        this.nombre = nombre;
+        this.color = color;
+        this.raza = raza;
+        this.printInfo = () => {
+            console.log(`Nombre: ${this.nombre} , De color: ${this.color} , Raza: ${this.raza}`);
+        }
+    }
+
+
+    let arrayOfDogs = [];
+
+    let fido = new Dog("Fido", "Cafe", "Poodle");
+    let lebron = new Dog("LeBron", "Negro", "Labrador");
+    let max = new Dog("Max", "Blanco", "Husky");
+
+    arrayOfDogs.push(fido, lebron, max);
+    arrayOfDogs.forEach(dog => {
+        dog.printInfo();
+    })
+}
 
 
 /*
@@ -68,8 +113,6 @@ Deberia escribir en consola
 */
 
 // CREA TU FUNCION printInfo() AQUI
-
-
 
 
 </script>
